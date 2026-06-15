@@ -1,0 +1,554 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="hc‘s blog" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="hc‘s blog" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="hc‘s blog" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="http://example.com/2021/03/11/c%E7%9A%84const/">
+
+
+
+  <title>
+const - C语言 |
+Yume Shoka = hc‘s blog</title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">const
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2021-03-11 12:43:15">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-03-11T12:43:15+08:00">2021-03-11</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://i.imgtg.com/2023/03/10/Yw8A1.jpg"></li>
+          <li class="item" data-background-image="https://imgtg.com/image/Y9E7l"></li>
+          <li class="item" data-background-image="https://i.imgtg.com/2023/03/10/YwcCU.jpg"></li>
+          <li class="item" data-background-image="https://i.imgtg.com/2023/03/10/YwjYM.jpg"></li>
+          <li class="item" data-background-image="https://i.loli.net/2020/10/30/rjdhcSgEN8COBPA.jpg"></li>
+          <li class="item" data-background-image="https://i.imgtg.com/2023/03/10/Yww6P.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/C%E8%AF%AD%E8%A8%80/" itemprop="item" rel="index" title="In C语言"><span itemprop="name">C语言</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/c%E7%9A%84const/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="deku酱">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="hc‘s blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>const 修饰的数据类型是指常类型，常类型的变量或对象的对象的值是不能被更新的。</p>
+<p>const 推出的初始目的，正是为了取代预编译指令，消除他的缺点，同时继承它的优点。</p>
+<h5 id="主要作用"><a href="#主要作用" class="headerlink" title="主要作用"></a>主要作用</h5><ol>
+<li>可以定义const常量，具有不可变性。例如：const int max = 100；max++会产生错误。</li>
+<li>便于进行类型检查，是编译器对处理内容有更多了解，消除了一些隐患。例如：void f（const int i）{…….}编译器就会知道i是一个常量，不允许修改；</li>
+<li>可以避免意义模糊的数字出现，同样可以很方便的进行参数的调整和修改。同宏定义一样。</li>
+<li>可以保护被修饰的东西，防止意外的修改，增强程序的健壮性。</li>
+<li>可以节省空间，避免不必要的内存分配。如：</li>
+</ol>
+<p>#define PI 3.14159 //常量宏  　　</p>
+<p>const double <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9QaQ==">Pi</span>=3.14159; //此时并未将Pi放入ROM中 ……  　　</p>
+<p>double i=Pi; //此时为Pi分配内存，以后不再分配！  　　</p>
+<p>double I=PI; //编译期间进行宏替换，分配内存　</p>
+<p>double j=Pi; //没有内存分配  　　</p>
+<p>double J=PI; //再进行宏替换，又一次分配内存！ </p>
+<p>const定义常量从汇编的角度来看，只是给出了对应的内存地址，而不是像#define一样给出的是立即数，所以，const定义的常量在程序运行过程中只有一份拷贝，而#define定义的常量在内存中有若干份拷贝。</p>
+<h5 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h5><p>例：为什么下面的例子在使用一个const变量来初始化数组，ANSI C编译器会报告一个错误呢？</p>
+<p>const int n = 5；</p>
+<p>int a[n];</p>
+<p> 答案与分析：</p>
+<p>1）这个问题讨论的是“常量与“只读变量”的区别。常量，例如5， “abc”，等，肯定是只读的，因为常量是被编译器放在内存中的只读区域，当然也就不能够去修改它。而“只读变量”则是在内存中开辟一个地方来存放它的值，只不过这个值由编译器限定不允许被修改。C语言关键字const就是用来限定一个变量不允许被改变的修饰符（Qualifier）。上述代码中变量n被修饰为只读变量，可惜再怎么修饰也不是常量。而ANSI C规定数组定义时长度必须是“常量” C99标准，数组下标可以用变量来表示），“只读变量”也是不可以的，“常量”不等于“不可变的变量”。但是在C++中，局部数组是可以使用变量作为其长度的。</p>
+<p>2）但是在标准C++中，这样定义的是一个常量，这种写法是对的。实际上，根据编译过程及内存分配ANSI C对数组的规定限制了它（实际上用GCC或VS2005编译以上代码，确实没有错误产生，也没有给出警告）。</p>
+<p>3）那么，在ANSI C中用什么来定义常量呢？答案是enum类型和#define宏，这两个都可以用来定义常量。</p>
+<p>。。。。。</p>
+<p>const 的用法还有很多，今天就先写到这里。</p>
+<p>有需要再添加吧。</p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2023-03-09 21:55:41" itemprop="dateModified" datetime="2023-03-09T21:55:41+08:00">2023-03-09</time>
+  </span>
+  <span id="2021/03/11/c的const/" class="item leancloud_visitors" data-flag-title="const" title="Views">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">Views</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">times</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="deku酱 WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="deku酱 Alipay">
+        <p>Alipay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="deku酱 PayPal">
+        <p>PayPal</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>deku酱 <i class="ic i-at"><em>@</em></i>hc‘s blog
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://example.com/2021/03/11/c%E7%9A%84const/" title="const">http://example.com/2021/03/11/c的const/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2021/03/07/%E7%BA%B5%E5%90%91%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;i.imgtg.com&#x2F;2023&#x2F;03&#x2F;10&#x2F;YwcCU.jpg" title="纵向联邦学习">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> 联邦学习</span>
+  <h3>纵向联邦学习</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2021/08/20/TZ%E5%AD%A6%E4%B9%A0%E7%BB%84%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%932021.8.9-2021.8.20/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;i.imgtg.com&#x2F;2023&#x2F;03&#x2F;10&#x2F;Yww6P.jpg" title="TZ学习组学习总结2021.8.9-2021.8.20">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> ARM TrustZone</span>
+  <h3>TZ学习组学习总结2021.8.9-2021.8.20</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E4%BD%9C%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">主要作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">变量和常量</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/2021/03/03/static/" rel="bookmark" title="C中static的运用">C中static的运用</a></li><li><a href="/2021/03/07/c%E7%9A%84%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D/" rel="bookmark" title="C的动态内存分配">C的动态内存分配</a></li><li class="active"><a href="/2021/03/11/c%E7%9A%84const/" rel="bookmark" title="const">const</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="deku酱"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">deku酱</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">28</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">12</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Nub3ctbWFuOQ==" title="https:&#x2F;&#x2F;github.com&#x2F;snow-man9"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>Friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>Links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2021/03/07/%E7%BA%B5%E5%90%91%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2021/08/20/TZ%E5%AD%A6%E4%B9%A0%E7%BB%84%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%932021.8.9-2021.8.20/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BD%91%E7%BB%9C/" title="In 网络">网络</a>
+</div>
+
+    <span><a href="/2022/08/28/%E8%BE%93%E5%85%A5URL%E4%B9%8B%E5%90%8E%E4%BC%9A%E6%89%A7%E8%A1%8C%E4%BB%80%E4%B9%88/" title="输入URL之后会执行什么">输入URL之后会执行什么</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/2023%E7%A7%8B%E6%8B%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="In 2023秋招学习记录">2023秋招学习记录</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E6%91%86%E7%83%82%E5%AE%9E%E5%BD%95/" title="In 摆烂实录">摆烂实录</a>
+</div>
+
+    <span><a href="/2023/04/19/4.19%E6%91%86%E7%83%82%E8%AE%B0%E5%BD%95/" title="4.19摆烂记录">4.19摆烂记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Java/" title="In Java">Java</a>
+</div>
+
+    <span><a href="/2022/08/22/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" title="构造函数">构造函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Java/" title="In Java">Java</a>
+</div>
+
+    <span><a href="/2022/08/22/%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99%E5%92%8C%E9%87%8D%E8%BD%BD/" title="方法重写和重载">方法重写和重载</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/03/02/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/ARM-TrustZone/" title="In ARM TrustZone">ARM TrustZone</a>
+</div>
+
+    <span><a href="/2021/08/20/TZ%E5%AD%A6%E4%B9%A0%E7%BB%84%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%932021.8.9-2021.8.20/" title="TZ学习组学习总结2021.8.9-2021.8.20">TZ学习组学习总结2021.8.9-2021.8.20</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/" title="In 联邦学习">联邦学习</a>
+</div>
+
+    <span><a href="/2021/03/06/3.6%E4%B8%BA%E4%BA%86%E8%82%9D%E5%91%A8%E6%8A%A5%E7%9A%84%E5%AD%A6%E4%B9%A0/" title="横向联邦学习">横向联邦学习</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Java/" title="In Java">Java</a>
+</div>
+
+    <span><a href="/2022/08/28/Spring%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E6%9C%89%E5%87%A0%E7%A7%8D%EF%BC%9F%E5%90%84%E8%87%AA%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E7%BC%BA%E7%82%B9%EF%BC%9F/" title="Spring依赖注入有几种？各自有什么优缺点？">Spring依赖注入有几种？各自有什么优缺点？</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%84%9F%E6%83%B3/" title="In 感想">感想</a>
+</div>
+
+    <span><a href="/2021/03/05/3.4%E7%9A%84%E6%84%9F%E6%83%B3/" title="怎么说呢，有点沉不下心来">怎么说呢，有点沉不下心来</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AE%97%E6%B3%95/" title="In 算法">算法</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/2023%E7%A7%8B%E6%8B%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="In 2023秋招学习记录">2023秋招学习记录</a>
+</div>
+
+    <span><a href="/2023/04/20/4.20%E7%AE%97%E6%B3%95%E8%AE%B0%E5%BD%95/" title="4.20算法记录">4.20算法记录</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">deku酱 @ Yume Shoka</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/03/11/c的const/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
